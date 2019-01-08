@@ -1,0 +1,59 @@
+site_name: gazebo-tutorial
+site_description: これはテキトーに日本語訳したgazeboのチュートリアルです
+site_author: harumo
+nav:
+    - ホーム: index.md
+    - メッシュの挿入: import_mesh.md
+    - ros-control: ros-control.md
+
+# the color is changed when mkdocs build
+theme: 
+  name: 'material'
+  palette:
+   primary: 'green'
+   acent:   'red'
+
+copyright: Copyright (c) 2018
+
+
+markdown_extensions:
+- extra
+- abbr
+- attr_list
+- def_list
+- fenced_code
+- footnotes
+- tables
+- admonition
+- codehilite
+- meta
+- nl2br
+- sane_lists
+- toc
+- wikilinks
+#pymdown extension
+- pymdownx.arithmatex
+- pymdownx.betterem:
+    smart_enable: all
+- pymdownx.caret
+- pymdownx.critic
+- pymdownx.details
+- pymdownx.inlinehilite
+- pymdownx.magiclink
+- pymdownx.mark
+- pymdownx.smartsymbols
+- pymdownx.superfences
+- pymdownx.tasklist:
+    custom_checkbox: true
+- pymdownx.tilde
+- fontawesome_markdown
+
+extra_javascript:
+ - 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+ - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+
+extra_css:
+ - "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
+ - "custom.css"
+
+ 
