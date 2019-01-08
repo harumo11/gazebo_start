@@ -1,0 +1,1059 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="これはテキトーに日本語訳したgazeboのチュートリアルです">
+      
+      
+      
+        <meta name="author" content="harumo">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+    
+    
+      
+        <title>ros-control - gazebo-tutorial</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#4caf50">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.8c900955.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../custom.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="green" data-md-color-accent="">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#gazebo-ros-control-" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="gazebo-tutorial" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                gazebo-tutorial
+              </span>
+              <span class="md-header-nav__topic">
+                ros-control
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="gazebo-tutorial" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    gazebo-tutorial
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="ホーム" class="md-nav__link">
+      ホーム
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../import_mesh/" title="メッシュの挿入" class="md-nav__link">
+      メッシュの挿入
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        ros-control
+      </label>
+    
+    <a href="./" title="ros-control" class="md-nav__link md-nav__link--active">
+      ros-control
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="用語" class="md-nav__link">
+    用語
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gazebo_ros_api_plugin" title="gazebo_ros_api_pluginについて" class="md-nav__link">
+    gazebo_ros_api_pluginについて
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gazebo_ros_paths_plugin" title="gazebo_ros_paths_pluginについて" class="md-nav__link">
+    gazebo_ros_paths_pluginについて
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gazebopublishparametertopic" title="gazeboが送信(publish)するparameterとtopic" class="md-nav__link">
+    gazeboが送信(publish)するparameterとtopic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gazebosubscribetopic" title="gazeboが購読(subscribe)しているtopic" class="md-nav__link">
+    gazeboが購読(subscribe)しているtopic
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic" title="Topicを通してモデルの位置と姿勢を設定する" class="md-nav__link">
+    Topicを通してモデルの位置と姿勢を設定する
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gazebopublishtopic" title="gazeboが配信(publish)しているtopic" class="md-nav__link">
+    gazeboが配信(publish)しているtopic
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topicstate" title="topicを用いてモデルとリンクのstateを取り出す" class="md-nav__link">
+    topicを用いてモデルとリンクのstateを取り出す
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service" title="serviceを用いたシミュレーション中のモデルの挿入と削除" class="md-nav__link">
+    serviceを用いたシミュレーション中のモデルの挿入と削除
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="モデルの生成" class="md-nav__link">
+    モデルの生成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="モデルの消去" class="md-nav__link">
+    モデルの消去
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestateproperties" title="serviceを通してstateとpropertiesを設定する" class="md-nav__link">
+    serviceを通してstateとpropertiesを設定する
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state" title="モデルのstateを設定する例" class="md-nav__link">
+    モデルのstateを設定する例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicestateproperties_1" title="serviceを通してstateとpropertiesの値を得る" class="md-nav__link">
+    serviceを通してstateとpropertiesの値を得る
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state_1" title="モデルのstateを得る例" class="md-nav__link">
+    モデルのstateを得る例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties" title="シミュレーションのワールドと物体のproperties" class="md-nav__link">
+    シミュレーションのワールドと物体のproperties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="サービスを用いた力制御" class="md-nav__link">
+    サービスを用いた力制御
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="サービスを用いてシミュレーションをコントロール" class="md-nav__link">
+    サービスを用いてシミュレーションをコントロール
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="例" class="md-nav__link">
+    例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="トラブルシューティング" class="md-nav__link">
+    トラブルシューティング
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="用語" class="md-nav__link">
+    用語
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gazebo_ros_api_plugin" title="gazebo_ros_api_pluginについて" class="md-nav__link">
+    gazebo_ros_api_pluginについて
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gazebo_ros_paths_plugin" title="gazebo_ros_paths_pluginについて" class="md-nav__link">
+    gazebo_ros_paths_pluginについて
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gazebopublishparametertopic" title="gazeboが送信(publish)するparameterとtopic" class="md-nav__link">
+    gazeboが送信(publish)するparameterとtopic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gazebosubscribetopic" title="gazeboが購読(subscribe)しているtopic" class="md-nav__link">
+    gazeboが購読(subscribe)しているtopic
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic" title="Topicを通してモデルの位置と姿勢を設定する" class="md-nav__link">
+    Topicを通してモデルの位置と姿勢を設定する
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gazebopublishtopic" title="gazeboが配信(publish)しているtopic" class="md-nav__link">
+    gazeboが配信(publish)しているtopic
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topicstate" title="topicを用いてモデルとリンクのstateを取り出す" class="md-nav__link">
+    topicを用いてモデルとリンクのstateを取り出す
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service" title="serviceを用いたシミュレーション中のモデルの挿入と削除" class="md-nav__link">
+    serviceを用いたシミュレーション中のモデルの挿入と削除
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="モデルの生成" class="md-nav__link">
+    モデルの生成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="モデルの消去" class="md-nav__link">
+    モデルの消去
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestateproperties" title="serviceを通してstateとpropertiesを設定する" class="md-nav__link">
+    serviceを通してstateとpropertiesを設定する
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state" title="モデルのstateを設定する例" class="md-nav__link">
+    モデルのstateを設定する例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicestateproperties_1" title="serviceを通してstateとpropertiesの値を得る" class="md-nav__link">
+    serviceを通してstateとpropertiesの値を得る
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state_1" title="モデルのstateを得る例" class="md-nav__link">
+    モデルのstateを得る例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties" title="シミュレーションのワールドと物体のproperties" class="md-nav__link">
+    シミュレーションのワールドと物体のproperties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="サービスを用いた力制御" class="md-nav__link">
+    サービスを用いた力制御
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="サービスを用いてシミュレーションをコントロール" class="md-nav__link">
+    サービスを用いてシミュレーションをコントロール
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="例" class="md-nav__link">
+    例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="トラブルシューティング" class="md-nav__link">
+    トラブルシューティング
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="gazebo-ros-control-">gazebo -ros control-</h1>
+<p>この文章は<a href="http://gazebosim.org/tutorials/?tut=ros_comm">gazebo ros</a>を参考程度に和訳したものです．</p>
+<h2 id="_1">用語</h2>
+<ul>
+<li>state : 剛体のpose(位置)とtwist(姿勢)のこと</li>
+<li>properties : 質量とか摩擦とかのこと</li>
+<li>body : 剛体のことを指す</li>
+<li>link : URDFのファイルの中で使用されるのと同様の意味合いでここでも使用される</li>
+<li>model : jointで結ばれたbodyの集合体のこと</li>
+</ul>
+<h2 id="gazebo_ros_api_plugin">gazebo_ros_api_pluginについて</h2>
+<p><code class="codehilite">gazebo_ros_api_plugin</code>と呼ばれるプラグインは<code class="codehilite">gazebo_ros</code>パッケージとともに読み込まれるプラグインのことで，rosノードとしてのgazeboが初期化される際に読み込まれる．<code class="codehilite">gazebo_ros_api_plugin</code>により，ユーザーはrosのapiを用いてシミュレーション環境のproperties(質量とか，摩擦とか)を操作できるだけでなく，modelをシミュレーション中に挿入したりすることができる．このプラグインは<code class="codehilite">gzserver</code>にのみ読み込まれる．</p>
+<h2 id="gazebo_ros_paths_plugin">gazebo_ros_paths_pluginについて</h2>
+<p><code class="codehilite">gazebo_ros_paths_plugin</code>は<code class="codehilite">gazebo_ros</code>パッケージの中に含まれているプラグインで，<code class="codehilite">gazebo_ros_paths_plugin</code>によって<code class="codehilite">gazebo</code>は簡単にros中のリソースを見つけることを可能にする．例えば，パッケージ名のパス解決などを行うことができる．このプラグインは<code class="codehilite">gzserver</code>と<code class="codehilite">gzclient</code>で読み込まれる．</p>
+<h2 id="gazebopublishparametertopic">gazeboが送信(publish)するparameterとtopic</h2>
+<p>gazeboは下記の２つの情報を送信している</p>
+<p>parameter : <code class="codehilite">/use_sim_time</code> : <strong>Bool</strong> </p>
+<p>時刻としてrosの各ノードが参照している<code class="codehilite">ROS time</code>に<code class="codehilite">/clock</code>を使用することを推奨するパラメータ. </p>
+<div class="codehilite"><pre><span></span>rosparam get /use_sim_time
+</pre></div>
+
+<div class="codehilite"><pre><span></span>true
+</pre></div>
+
+<p>topic : <code class="codehilite">clock</code> </p>
+<p>gazebo中の現在時刻をtopicとして送信する．</p>
+<div class="codehilite"><pre><span></span>rostopic echo /clock
+</pre></div>
+
+<div class="codehilite"><pre><span></span>---
+clock: 
+  secs: 434
+  nsecs: 943000000
+---
+</pre></div>
+
+<h2 id="gazebosubscribetopic">gazeboが購読(subscribe)しているtopic</h2>
+<p>gazeboは下記の２つのtopicを購読している．</p>
+<p><code class="codehilite">~/set_link_state</code> : <code class="codehilite">gazebo_msgs/LinkState</code></p>
+<p>このtopicを通してlinkのstate(pose/twist)を設定することができる</p>
+<div class="codehilite"><pre><span></span>rostopic info /gazebo/set_link_state
+</pre></div>
+
+<p><code class="codehilite">~/set_model_state</code> : <code class="codehilite">gazebo_msgs/ModelState</code></p>
+<p>このtopicをとおしてmodelのstate(psoe/twist)を設定することができる</p>
+<div class="codehilite"><pre><span></span>rospopic info /gazebo/set_model_state
+</pre></div>
+
+<h3 id="topic">Topicを通してモデルの位置と姿勢を設定する</h3>
+<p>これらのtopicを通してgazeboに干渉する方法では，<code class="codehilite">action (ros actionのこと)</code>が完了するのを待つ必要がないため，高速に処理が行える．topicを通してモデルに目標の位置と姿勢を設定するには<code class="codehilite">model state message</code>を<code class="codehilite">/gazebo/set_model_state</code>トピックに送ればよい．</p>
+<p>ためしに，シミュレータ内にオンラインデータベースからコカコーラの缶を挿入し，topicによってロボットの位置を変更してみよう．</p>
+<div class="codehilite"><pre><span></span>rosrun gazebo_ros spawn_model -database coke_can -sdf  -model coke_can -y 1 
+</pre></div>
+
+<p>topicの<code class="codehilite">/gazebo/set_model_state</code>を送ることによってコーラの缶の姿勢を変えてみよう．</p>
+<div class="codehilite"><pre><span></span>rostopic pub -r 20 /gazebo/set_model_state gazebo_msgs/ModelState &quot;model_name: &#39;coke_can&#39;
+pose:
+  position:
+    x: 1.0
+    y: 0.0
+    z: 2.0
+  orientation:
+    x: 0.0
+    y: 0.49
+    z: 0.0
+    w: 0.8
+twist:
+  linear:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  angular:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+reference_frame: &#39;world&#39;&quot; 
+</pre></div>
+
+<p><img alt="Screenshot from 2019-01-04 21-55-10" src="../image/2019-01-04 21-55-10.png" /></p>
+<p>20Hzで位置を送信しているので，なんだか震えているように見える．</p>
+<h2 id="gazebopublishtopic">gazeboが配信(publish)しているtopic</h2>
+<p>gazeboは下記の３つのtopicを配信している．</p>
+<p><code class="codehilite">/clock</code> : <code class="codehilite">rosgraph_msgs/Clock</code> </p>
+<p>このtopicはシミュレーションの現在時刻を配信する．<code class="codehilite">/use_sim_time</code>パラメータと一緒に使用される</p>
+<p><code class="codehilite">~/link_states</code> : <code class="codehilite">gazebo_msgs/LinkStates</code></p>
+<p>このtopicはシミュレーション中の全リンクのstate(位置と姿勢)を配信する</p>
+<p><code class="codehilite">~/model_states</code> : <code class="codehilite">gazebo_msgs/ModelStates</code></p>
+<p>このtopicはシミュレーション中の全モデルのstate(位置と姿勢)を配信する</p>
+<h3 id="topicstate">topicを用いてモデルとリンクのstateを取り出す</h3>
+<p>gazeboは<code class="codehilite">/gazebo/link_states/</code>と<code class="codehilite">/gazebo/model_states</code>topicを配信しており，それらはシミュレーション中に存在する物体の位置と姿勢に関する情報を持っている．ただし，それらの座標系は**world**座標系である．</p>
+<div class="codehilite"><pre><span></span>rostopic echo -n 1 /gazebo/model_states
+</pre></div>
+
+<div class="codehilite"><pre><span></span>name: [ground_plane, coke_can]
+pose: 
+  - 
+    position: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+  - 
+    position: 
+      x: 1.11122948075
+      y: 0.0596752875869
+      z: 0.0662327169434
+    orientation: 
+      x: -0.23373060486
+      y: 0.666667965594
+      z: -0.29032521043
+      w: 0.645472772619
+twist: 
+  - 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+  - 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+---
+</pre></div>
+
+<div class="codehilite"><pre><span></span>rostopic echo -n 1 /gazebo/link_states
+</pre></div>
+
+<div class="codehilite"><pre><span></span>name: [&#39;ground_plane::link&#39;, &#39;coke_can::link&#39;]
+pose: 
+  - 
+    position: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+  - 
+    position: 
+      x: 1.11122948075
+      y: 0.0596752875869
+      z: 0.0662327169434
+    orientation: 
+      x: -0.23373060486
+      y: 0.666667965594
+      z: -0.29032521043
+      w: 0.645472772619
+twist: 
+  - 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+  - 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+---
+</pre></div>
+
+<p>繰り返しになるが，リンクは慣性<inertial>，視覚<visual>および，衝突特性<collision>をもつ剛体として定義される．一方，モデルはリンクとジョイントの集まりとして定義される．モデルのstateはそのモデルの基底リンクのstateとなる．URDFはツリー構造を持っているので，そこから考えると，モデルの基底リンクは，そのモデルのルートリンクとなる．</p>
+<h2 id="service">serviceを用いたシミュレーション中のモデルの挿入と削除</h2>
+<p>下記の<code class="codehilite">ros service</code>はユーザーにモデルのシミュレーションへの挿入と削除を動的に行うことができる．-</p>
+<ul>
+<li><code class="codehilite">~/spawn_urdf_model</code> : <code class="codehilite">gazebo_msgs/SpawnModel</code> </li>
+</ul>
+<p>​        このサービスはURDFをシミュレーション内へ挿入する</p>
+<ul>
+<li><code class="codehilite">~/spawn_sdf_model</code> : <code class="codehilite">gazebo_msgs/SpawnModel</code></li>
+</ul>
+<p>​        このサービスはSDFをシミュレーション内へ挿入する</p>
+<ul>
+<li><code class="codehilite">~/delete_model</code> : <code class="codehilite">gazebo_msgs/DeleteModel</code></li>
+</ul>
+<p>​        このサービスはシミュレーション内のモデルを削除する</p>
+<h3 id="_2">モデルの生成</h3>
+<p><code class="codehilite">spawn_model</code>と呼ばれるヘルパースクリプトは<code class="codehilite">gazebo_ros</code>パッケージで提供され，モデル挿入サービスを提供する．serviceの最も実用的なモデル挿入の方法は<code class="codehilite">roslaunch</code>ファイルとともに使用する方法である．詳しくは<a href="http://gazebosim.org/tutorials/?tut=ros_roslaunch">Using roslaunch File to Spawn Models</a>のチュートリアルを見るとよい．そこには多数の<code class="codehilite">spawn_model</code>を使用してURDFやSDFをgazeboに加える方法が示されている．</p>
+<p>ファイルからURDFをシミュレーションに挿入する．まず，xacroファイルをxmlファイルへ変換する．</p>
+<div class="codehilite"><pre><span></span>rosrun xacro xacro `rospack find rrbot_description`/urdf/rrbot.xacro &gt;&gt; `rospack find rrbot_description`/urdf/rrbot.xml
+</pre></div>
+
+<p>そして，挿入する</p>
+<div class="codehilite"><pre><span></span>rosrun gazebo_ros spawn_model -file `rospack find rrbot_description`/urdf/rrbot.xml -urdf -y 1 -model rrbot1 -robot_namespace rrbot1
+</pre></div>
+
+<p>もし，エラー中に*junk*の文字があったら，一回作成したxmlファイルを消してから，もう一度xmlを生成すること．そうでない場合は,gazeboとかroscoreとかを全部消してからもう一度おこなうこと．</p>
+<p>ROS melodicを使用している場合はrrbotのURDFの記述が時代遅れなためコーラの缶とrrbotを同時にシミュレーター内に挿入することはできない．</p>
+<h3 id="_3">モデルの消去</h3>
+<p>モデルを消去する方法は簡単で，もしあなたがrrbotを"rrbot1"という名前で挿入している場合は下記のコマンドによってモデルを消去できる．</p>
+<div class="codehilite"><pre><span></span>rosservice call gazebo/delete_model &#39;{model_name: rrbot1}&#39;
+</pre></div>
+
+<h2 id="servicestateproperties">serviceを通してstateとpropertiesを設定する</h2>
+<p><code class="codehilite">ros service</code>をとおして物体のstate（位置・姿勢）やproperties（摩擦など）を設定できる</p>
+<ul>
+<li><code class="codehilite">~/set_link_properties</code> : <code class="codehilite">gazebo_msgs/SetLinkProperties</code></li>
+<li><code class="codehilite">~/set_physics_properties</code> : <code class="codehilite">gazebo_msgs/SetPhysicsProperties</code></li>
+<li><code class="codehilite">~/set_model_state</code> : <code class="codehilite">gazebo_msgs/SetModelState</code></li>
+<li><code class="codehilite">~/set_model_configuration</code> : <code class="codehilite">gazebo_msgs/SetModelConfiguration</code></li>
+</ul>
+<p>​        このサービスは動的な呼び出しなしにモデルのジョイント角度を設定することができる</p>
+<ul>
+<li><code class="codehilite">~/set_joint_properties</code> : <code class="codehilite">gazebo_msgs/SetJointProperties</code></li>
+<li><code class="codehilite">~/set_link_state</code> : <code class="codehilite">gazebo_msgs/SetLinkState</code></li>
+<li><code class="codehilite">~/set_link_state</code> : <code class="codehilite">gazebo_msgs/LinkState</code></li>
+<li><code class="codehilite">~/set_model_state</code> : <code class="codehilite">gazebo_msgs/ModelState</code></li>
+</ul>
+<h3 id="state">モデルのstateを設定する例</h3>
+<p><strong>ROS Melodicだとrrbotのパッケージが古すぎてrrbotとコーラの缶を同時に存在させられないのでここはパス</strong></p>
+<h3 id="servicestateproperties_1">serviceを通してstateとpropertiesの値を得る</h3>
+<p><code class="codehilite">ros service</code>を通して物体のstateとpropertiesの設定された値を取得できる</p>
+<ul>
+<li><code class="codehilite">~/get_model_properties</code> : <code class="codehilite">gazebo_msgs/GetModelProperties</code></li>
+</ul>
+<p>​        このサービスはシミュレーション内のモデルのpropertiesを返す</p>
+<ul>
+<li><code class="codehilite">~/get_model_state</code> : <code class="codehilite">gazebo_msgs/GetModelState</code></li>
+</ul>
+<p>​        このサービスはシミュレータ内のモデルのstateを返す</p>
+<ul>
+<li><code class="codehilite">~/get_world_properties</code> : <code class="codehilite">gazebo_msgs/GetWorldProperties</code></li>
+</ul>
+<p>​        このサービスはシミュレーションワールドのpropertiesを返す</p>
+<ul>
+<li><code class="codehilite">~/get_joint_properties</code> : <code class="codehilite">gazebo_msgs/GetJointProperties</code></li>
+</ul>
+<p>​        このサービスはシミュレータ内のジョイントのpropertiesを返す</p>
+<ul>
+<li><code class="codehilite">~/get_link_properties</code> : <code class="codehilite">gazebo_msgs/GetLinkProperties</code> </li>
+</ul>
+<p>​        このサービスはシミュレータ内のリンクのpropertiesを返す</p>
+<ul>
+<li><code class="codehilite">~/get_link_state</code> : <code class="codehilite">gazebo_msgs/GetLinkState</code></li>
+</ul>
+<p>​        このサービスはシミュレータ内のリンクのstateを返す</p>
+<ul>
+<li><code class="codehilite">~/get_physics_properties</code> : <code class="codehilite">gazebo_msgs/GetPhysicsProperties</code><br />
+  このサービスはシミュレータで使用されている物理エンジンのpropertiesを返す</li>
+</ul>
+<h3 id="state_1">モデルのstateを得る例</h3>
+<div class="codehilite"><pre><span></span>rosservice call /gazebo/get_model_state &#39;{model_name: coke_can}&#39;
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="n">header</span><span class="o">:</span> 
+  <span class="n">seq</span><span class="o">:</span> <span class="mi">1</span>
+  <span class="n">stamp</span><span class="o">:</span> 
+    <span class="n">secs</span><span class="o">:</span> <span class="mi">1546622800</span>
+    <span class="n">nsecs</span><span class="o">:</span> <span class="mi">365554047</span>
+  <span class="n">frame_id</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+<span class="n">pose</span><span class="o">:</span> 
+  <span class="n">position</span><span class="o">:</span> 
+    <span class="n">x</span><span class="o">:</span> <span class="o">-</span><span class="mf">1.31615897336</span><span class="n">e</span><span class="o">-</span><span class="mi">05</span>
+    <span class="n">y</span><span class="o">:</span> <span class="mf">0.999944301203</span>
+    <span class="n">z</span><span class="o">:</span> <span class="o">-</span><span class="mf">0.00398847138329</span>
+  <span class="n">orientation</span><span class="o">:</span> 
+    <span class="n">x</span><span class="o">:</span> <span class="o">-</span><span class="mf">0.00789028282505</span>
+    <span class="n">y</span><span class="o">:</span> <span class="mf">0.00174586151438</span>
+    <span class="n">z</span><span class="o">:</span> <span class="mf">0.000124429190607</span>
+    <span class="n">w</span><span class="o">:</span> <span class="mf">0.999967339428</span>
+<span class="n">twist</span><span class="o">:</span> 
+  <span class="n">linear</span><span class="o">:</span> 
+    <span class="n">x</span><span class="o">:</span> <span class="mf">0.0</span>
+    <span class="n">y</span><span class="o">:</span> <span class="mf">0.0</span>
+    <span class="n">z</span><span class="o">:</span> <span class="mf">0.0</span>
+  <span class="n">angular</span><span class="o">:</span> 
+    <span class="n">x</span><span class="o">:</span> <span class="mf">0.0</span>
+    <span class="n">y</span><span class="o">:</span> <span class="mf">0.0</span>
+    <span class="n">z</span><span class="o">:</span> <span class="mf">0.0</span>
+<span class="n">success</span><span class="o">:</span> <span class="n">True</span>
+<span class="n">status_message</span><span class="o">:</span> <span class="s2">&quot;GetModelState: got properties&quot;</span>
+</pre></div>
+
+<p>ただし，<code class="codehilite">ros service</code>を用いるこの例だと取得まで0.3秒くらいかかるので上記のtopicを利用した方法を用いた場合のほうがいいかもしれない．</p>
+<h3 id="properties">シミュレーションのワールドと物体のproperties</h3>
+<p>実行中のシミュレータのワールドに存在するモデルのリストを得ることができる</p>
+<div class="codehilite"><pre><span></span>rosservice call /gazebo/get_world_properties 
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="n">sim_time</span><span class="o">:</span> <span class="mf">1742.647</span>
+<span class="n">model_names</span><span class="o">:</span> <span class="o">[</span><span class="n">ground_plane</span><span class="o">,</span> <span class="n">coke_can</span><span class="o">]</span>
+<span class="n">rendering_enabled</span><span class="o">:</span> <span class="n">True</span>
+<span class="n">success</span><span class="o">:</span> <span class="n">True</span>
+<span class="n">status_message</span><span class="o">:</span> <span class="s2">&quot;GetWorldProperties: got properties&quot;</span>
+</pre></div>
+
+<p>さらに詳細をモデルごとに検索することが可能</p>
+<div class="codehilite"><pre><span></span>rosservice call /gazebo/get_model_properties &#39;{model_name: coke_can}&#39;
+</pre></div>
+
+<div class="codehilite"><pre><span></span>parent_model_name: &#39;&#39;
+canonical_body_name: &#39;&#39;
+body_names: [link]
+geom_names: [collision]
+joint_names: []
+child_model_names: []
+is_static: False
+success: True
+status_message: &quot;GetModelProperties: got properties&quot;
+</pre></div>
+
+<h2 id="_4">サービスを用いた力制御</h2>
+<p><strong>Melodicだとロボットと缶を同時に出現させられないのでパス</strong></p>
+<h2 id="_5">サービスを用いてシミュレーションをコントロール</h2>
+<p>serviceを用いて一時停止とか停止解除とかを行うことができる</p>
+<ul>
+<li><code class="codehilite">~/pause_physics</code> : <code class="codehilite">std_srvs/Empty</code></li>
+</ul>
+<p>​        シミュレータの一時停止</p>
+<ul>
+<li><code class="codehilite">~/unpause_physics</code> : <code class="codehilite">std_srvs/Empty</code></li>
+</ul>
+<p>​        シミュレータの一時停止解除</p>
+<ul>
+<li><code class="codehilite">~/reset_simulation</code> : <code class="codehilite">std_srvs/Empty</code></li>
+</ul>
+<p>​        シミュレータ内の時間を含めたすべてのものをリセットする</p>
+<ul>
+<li><code class="codehilite">~/reset_world</code> : <code class="codehilite">std_srvs/Empty</code></li>
+</ul>
+<p>​        シミュレータ内のモデルを初期状態に戻す</p>
+<h3 id="_6">例</h3>
+<div class="codehilite"><pre><span></span>roservice call /gazebo/reset_world
+</pre></div>
+
+<div class="codehilite"><pre><span></span>rosservice call /gazebo/pause_physics
+</pre></div>
+
+<div class="codehilite"><pre><span></span>rosservice call /gazebo/unpause_physics
+</pre></div>
+
+<h2 id="_7">トラブルシューティング</h2>
+<ul>
+<li>gazeboを立ち上げたけどロゴが表示されて止まっており，真っ暗な世界が表示されている．</li>
+</ul>
+<p>以前のgzserverが立ち上がっている可能性があります．<code class="codehilite">ps -aux | grep gz</code>としてみてgzserverが生き残っていたら<code class="codehilite">kill</code>で殺しておきましょう．</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../import_mesh/" title="メッシュの挿入" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                メッシュの挿入
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright (c) 2018
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.b41f3d20.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>

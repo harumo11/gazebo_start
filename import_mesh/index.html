@@ -1,0 +1,590 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="これはテキトーに日本語訳したgazeboのチュートリアルです">
+      
+      
+      
+        <meta name="author" content="harumo">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+    
+    
+      
+        <title>メッシュの挿入 - gazebo-tutorial</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#4caf50">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.8c900955.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../custom.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="green" data-md-color-accent="">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="gazebo-tutorial" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                gazebo-tutorial
+              </span>
+              <span class="md-header-nav__topic">
+                メッシュの挿入
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="gazebo-tutorial" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    gazebo-tutorial
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="ホーム" class="md-nav__link">
+      ホーム
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        メッシュの挿入
+      </label>
+    
+    <a href="./" title="メッシュの挿入" class="md-nav__link md-nav__link--active">
+      メッシュの挿入
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="メッシュの準備" class="md-nav__link">
+    メッシュの準備
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="複雑さを減らすために" class="md-nav__link">
+    複雑さを減らすために
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="メッシュの中心" class="md-nav__link">
+    メッシュの中心
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="メッシュのスケール" class="md-nav__link">
+    メッシュのスケール
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="メッシュのエクスポート" class="md-nav__link">
+    メッシュのエクスポート
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="メッシュのテスト" class="md-nav__link">
+    メッシュのテスト
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="実行方法" class="md-nav__link">
+    実行方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="テスト用のメッシュ" class="md-nav__link">
+    テスト用のメッシュ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../ros-control/" title="ros-control" class="md-nav__link">
+      ros-control
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="メッシュの準備" class="md-nav__link">
+    メッシュの準備
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="複雑さを減らすために" class="md-nav__link">
+    複雑さを減らすために
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="メッシュの中心" class="md-nav__link">
+    メッシュの中心
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="メッシュのスケール" class="md-nav__link">
+    メッシュのスケール
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="メッシュのエクスポート" class="md-nav__link">
+    メッシュのエクスポート
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="メッシュのテスト" class="md-nav__link">
+    メッシュのテスト
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="実行方法" class="md-nav__link">
+    実行方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="テスト用のメッシュ" class="md-nav__link">
+    テスト用のメッシュ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1"><a href="http://gazebosim.org/tutorials?tut=import_mesh">メッシュの挿入</a></h1>
+<p>このチュートリアルではGazeboにメッシュを挿入する方法について学びます．</p>
+<p>このチュートリアルでは，Gazeboのワールド設定ファイルとして<code class="codehilite">sdf</code>ファイルを，メッシュのファイルとして<code class="codehilite">dae</code>を利用します．</p>
+<table>
+<thead>
+<tr>
+<th align="center">ファイルの規格</th>
+<th align="center">拡張子</th>
+<th align="center">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">sdf(SDF)</td>
+<td align="center">.world</td>
+<td align="center">Gazeboのワールドを記述するための設定ファイル</td>
+</tr>
+<tr>
+<td align="center">collada(Collada)</td>
+<td align="center">.dae</td>
+<td align="center">3Dモデル（メッシュ）のファイル．色情報付き</td>
+</tr>
+<tr>
+<td align="center">slt(STL)</td>
+<td align="center">.stl</td>
+<td align="center">3Dモデル（メッシュ）のファイル．色情報無し</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">メッシュの準備</h2>
+<p>Gazeboでは右手系の座標系を使用します．右手系とはｚ軸が上向き，ｘ軸が前向き（画面の方向），ｙ軸が左向きの座標系です．</p>
+<h3 id="_3">複雑さを減らすために</h3>
+<p>多くのメッシュは過度に複雑になる可能性があります．数千の三角形からなるメッシュは，その三角形の数を減らすか分割することが効率のために望ましいです．三角形を減らしたり，複数のメッシュに分割するために，あなたが使用してる3Dメッシュ編集ソフトの説明を読んでみてください．</p>
+<h3 id="_4">メッシュの中心</h3>
+<p>最初のステップはメッシュを中心(0,0,0)に置き，（これは主観的になりますが）メッシュの正面がｘ軸に沿うようにしてください．</p>
+<h3 id="_5">メッシュのスケール</h3>
+<p>Gazeboの距離の単位はメートルです．多くの3D編集ソフトではメートルが基準単位になっていないので，３D編集ソフトの設定を変更して，基準単位をメートルにしてください．</p>
+<h2 id="_6">メッシュのエクスポート</h2>
+<p>メッシュが適切に準備できたなら，<code class="codehilite">Collada</code> ファイルとしてエクスポートしてください．この<code class="codehilite">Collada</code>ファイルは3次元情報と色情報を含みます．注意点として<code class="codehilite">Collada</code>ファイルの拡張子は<code class="codehilite"><span class="na">.dae</span></code>です．</p>
+<h2 id="_7">メッシュのテスト</h2>
+<p>エクスポートしたメッシュをテストする最も簡単な方法は，簡単なワールドファイル<code class="codehilite">my_mesh.world</code>をつくり，その中で，メッシュを読み込むことです．下記の<code class="codehilite">my_mesh.dae</code>を実際のファイル名に置き換えてください．また，注意点として<code class="codehilite">sdf</code>ファイルの拡張子は<code class="codehilite"><span class="na">.world</span></code>です．</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;sdf</span> <span class="na">version=</span><span class="s">&quot;1.4&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;world</span> <span class="na">name=</span><span class="s">&quot;default&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;include&gt;</span>
+            <span class="nt">&lt;uri&gt;</span>model://ground_plane<span class="nt">&lt;/uri&gt;</span>
+        <span class="nt">&lt;/include&gt;</span>
+        <span class="nt">&lt;include&gt;</span>
+            <span class="nt">&lt;uri&gt;</span>model://sun<span class="nt">&lt;/uri&gt;</span>
+        <span class="nt">&lt;/include&gt;</span>
+        <span class="nt">&lt;model</span> <span class="na">name=</span><span class="s">&quot;my_mesh&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;pose&gt;</span>0 0 0  0 0 0<span class="nt">&lt;/pose&gt;</span>
+            <span class="nt">&lt;static&gt;</span>true<span class="nt">&lt;/static&gt;</span>
+            <span class="nt">&lt;link</span> <span class="na">name=</span><span class="s">&quot;body&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;visual</span> <span class="na">name=</span><span class="s">&quot;visual&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;geometory&gt;</span>
+                        <span class="nt">&lt;mesh&gt;&lt;uri&gt;</span>file://my_desh.dae<span class="nt">&lt;/uri&gt;&lt;/mesh&gt;</span>
+                    <span class="nt">&lt;/geometory&gt;</span>
+                <span class="nt">&lt;/visual&gt;</span>
+            <span class="nt">&lt;/link&gt;</span>
+        <span class="nt">&lt;/model&gt;</span>
+    <span class="nt">&lt;/world&gt;</span>
+<span class="nt">&lt;/sdf&gt;</span>
+</pre></div>
+
+<h3 id="_8">実行方法</h3>
+<p>Gazeboにmy_mesh.worldファイルを<a href="https://qiita.com/srs/items/9b23ad12bea9e3ec0480">渡す方法</a>はいくつかありますが，今回は最も簡単な方法を利用します．すなわち，Gazebo起動時の引数としてmy_mesh.worldファイルを渡す方法です．my_mesh.worldがおいてあるディレクトリに移動して下記のコマンドを打ってください．</p>
+<div class="codehilite"><pre><span></span>gazebo my_mesh.world
+</pre></div>
+
+<h3 id="_9">テスト用のメッシュ</h3>
+<p>テスト用のメッシュとして<a href="https://web.archive.org/web/20120513213905/http://www.c3dl.org/wp-content/2.0Release/Resources/duck.dae">dock.dae</a>と<a href="https://web.archive.org/web/20120513204538/http://www.c3dl.org/wp-content/2.0Release/Resources/duck.png">dock.png</a>を使ってください．これらをダウンロードしてworldファイルと同じディレクトリにおいてください．このduckメッシュはｙ軸が上を向くように設定されているので（Gazeboはｚ軸が上向き），sdfファイル(my_mesh.world)を編集してdockを回転させてください．</p>
+<p><div class="codehilite"><pre><span></span><span class="nt">&lt;visual</span> <span class="na">name=</span><span class="s">&quot;visual&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;pose&gt;</span>0 0 0 1.5708 0 0<span class="nt">&lt;/pose&gt;</span>
+    <span class="nt">&lt;geometory&gt;</span>
+    <span class="nt">&lt;mesh&gt;&lt;uri&gt;</span>file://dock.dae<span class="nt">&lt;/uri&gt;&lt;/mesh&gt;</span>
+    <span class="nt">&lt;/geometory&gt;</span>
+<span class="nt">&lt;/visual&gt;</span>
+</pre></div><br />
+<img alt="duck" src="../img/gazebo-duck.png" /></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="ホーム" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                ホーム
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../ros-control/" title="ros-control" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                ros-control
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright (c) 2018
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.b41f3d20.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
