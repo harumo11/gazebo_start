@@ -364,7 +364,7 @@
     name=&quot;spawn_model&quot;
     pkg=&quot;gazebo_ros&quot;
     type=&quot;spawn_model&quot;
-    args=&quot;-file $(find broom)/robots/broom.urdf -urdf -model broom -x 0 -y 0 -z 1&quot;
+    args=&quot;-file $(find broom)/robots/broom.urdf -urdf -model broom -x 0 -y 0 -z 1 -R 0.1 -P 0.1 -Y 0.1&quot;
 </pre></div>
 
 <h4 id="usage">Usage</h4>
@@ -374,6 +374,15 @@
 <p>gazeboにモデルを生成する方法．<br />
 <code class="codehilite">broom.urdf</code>を座標(0 0 -1)に生成している．座標を省略すると原点にモデルが生成される．<br />
 具体的には，urdfにかかれている<code class="codehilite">base_link</code>の座標がgazeboの(0 0 0)に重なるようにモデルが出現する．</p>
+<div class="codehilite"><pre><span></span><span class="n">usage</span><span class="o">:</span> <span class="n">spawn_model</span> <span class="o">[-</span><span class="n">h</span><span class="o">]</span> <span class="o">(-</span><span class="n">urdf</span> <span class="o">|</span> <span class="o">-</span><span class="n">sdf</span><span class="o">)</span>
+                   <span class="o">(-</span><span class="n">file</span> <span class="n">FILE_NAME</span> <span class="o">|</span> <span class="o">-</span><span class="n">param</span> <span class="n">PARAM_NAME</span> <span class="o">|</span> <span class="o">-</span><span class="n">database</span> <span class="n">MODEL_NAME</span> <span class="o">|</span> <span class="o">-</span><span class="n">stdin</span><span class="o">)</span>
+                   <span class="o">-</span><span class="n">model</span> <span class="n">MODEL_NAME</span> <span class="o">[-</span><span class="n">reference_frame</span> <span class="n">REFERENCE_FRAME</span><span class="o">]</span>
+                   <span class="o">[-</span><span class="n">gazebo_namespace</span> <span class="n">GAZEBO_NAMESPACE</span><span class="o">]</span>
+                   <span class="o">[-</span><span class="n">robot_namespace</span> <span class="n">ROBOT_NAMESPACE</span><span class="o">]</span> <span class="o">[-</span><span class="n">unpause</span><span class="o">]</span>
+                   <span class="o">[-</span><span class="n">wait</span> <span class="n">MODEL_NAME</span><span class="o">]</span> <span class="o">[-</span><span class="n">x</span> <span class="n">X</span><span class="o">]</span> <span class="o">[-</span><span class="n">y</span> <span class="n">Y</span><span class="o">]</span> <span class="o">[-</span><span class="n">z</span> <span class="n">Z</span><span class="o">]</span> <span class="o">[-</span><span class="n">R</span> <span class="n">R</span><span class="o">]</span> <span class="o">[-</span><span class="n">P</span> <span class="n">P</span><span class="o">]</span>
+                   <span class="o">[-</span><span class="n">Y</span> <span class="n">Y</span><span class="o">]</span> <span class="o">[-</span><span class="n">J</span> <span class="n">JOINT_NAME</span> <span class="n">JOINT_POSITION</span><span class="o">]</span> <span class="o">[-</span><span class="n">package_to_model</span><span class="o">]</span>
+                   <span class="o">[-</span><span class="n">b</span><span class="o">]</span>
+</pre></div>
                 
                   
                 
