@@ -35,18 +35,18 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="/assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
-        <title>gazebo-tutorial</title>
+        <title>tradition/fake_joint_calibration - gazebo-tutorial</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
       
-        <link rel="stylesheet" href="/assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
       
       
         
@@ -55,7 +55,7 @@
       
     
     
-      <script src="/assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -64,12 +64,12 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="/assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     
-      <link rel="stylesheet" href="/custom.css">
+      <link rel="stylesheet" href="../../custom.css">
     
     
   </head>
@@ -88,12 +88,16 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#usage-in-launch-file" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="/." title="gazebo-tutorial" class="md-header-nav__button md-logo">
+        <a href="../.." title="gazebo-tutorial" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -110,7 +114,7 @@
                 gazebo-tutorial
               </span>
               <span class="md-header-nav__topic">
-                
+                tradition/fake_joint_calibration
               </span>
             
           
@@ -165,7 +169,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="/." title="gazebo-tutorial" class="md-nav__button md-logo">
+    <a href="../.." title="gazebo-tutorial" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
@@ -181,7 +185,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/." title="ホーム" class="md-nav__link">
+    <a href="../.." title="ホーム" class="md-nav__link">
       ホーム
     </a>
   </li>
@@ -193,7 +197,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/import_mesh/" title="メッシュの挿入" class="md-nav__link">
+    <a href="../../import_mesh/" title="メッシュの挿入" class="md-nav__link">
       メッシュの挿入
     </a>
   </li>
@@ -205,7 +209,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/ros-control/" title="ros-control" class="md-nav__link">
+    <a href="../../ros-control/" title="ros-control" class="md-nav__link">
       ros-control
     </a>
   </li>
@@ -217,7 +221,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/tradition/static_transform_publisher/" title="tradition/static_transform_publisher" class="md-nav__link">
+    <a href="../static_transform_publisher/" title="tradition/static_transform_publisher" class="md-nav__link">
       tradition/static_transform_publisher
     </a>
   </li>
@@ -229,7 +233,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/tradition/spawn_model/" title="tradition/spawn_model" class="md-nav__link">
+    <a href="../spawn_model/" title="tradition/spawn_model" class="md-nav__link">
       tradition/spawn_model
     </a>
   </li>
@@ -239,11 +243,52 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="/tradition/fake_joint_calibration/" title="tradition/fake_joint_calibration" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        tradition/fake_joint_calibration
+      </label>
+    
+    <a href="./" title="tradition/fake_joint_calibration" class="md-nav__link md-nav__link--active">
       tradition/fake_joint_calibration
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usage-in-launch-file" title="Usage in launch file." class="md-nav__link">
+    Usage in launch file.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" title="Usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -254,12 +299,84 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usage-in-launch-file" title="Usage in launch file." class="md-nav__link">
+    Usage in launch file.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" title="Usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
+                
+                
+                  <h1>tradition/fake_joint_calibration</h1>
+                
+                <table>
+<thead>
+<tr>
+<th>name</th>
+<th>pkg</th>
+<th>type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fake_joint_calibration</td>
+<td>rostopic</td>
+<td>rostopic</td>
+</tr>
+</tbody>
+</table>
+<h4 id="usage-in-launch-file">Usage in launch file.</h4>
+<div class="codehilite"><pre><span></span>&lt;node
+    name=&quot;fake_joint_calibration&quot;
+    pkg=&quot;rostopic&quot;
+    type=&quot;rostopic&quot;
+    args=&quot;pub /calibrated std_msgs/Bool true&quot;/&gt;
+</pre></div>
 
+<h4 id="usage">Usage</h4>
+<p><div class="codehilite"><pre><span></span>rostopic pub /calibrated std_msgs/Bool true
+</pre></div><br />
+と同じ意味．</p>
+<p>solidworks_expoterを使ってパッケージを自動生成するとgazebo.launchファイルに書き込まれる．<br />
+だれもsubscribeしてないし，なぜ存在するのかは謎．</p>
+                
+                  
+                
+              
               
                 
 
@@ -272,6 +389,27 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../spawn_model/" title="tradition/spawn_model" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                tradition/spawn_model
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -296,9 +434,9 @@
       
     </div>
     
-      <script src="/assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../assets/javascripts/application.b41f3d20.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"/"}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
         <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
